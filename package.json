@@ -4,7 +4,10 @@
   "description": "starter-kit for react with typescript and tailwind css",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open --hot"
+    "start": "npm run watch:css && webpack-dev-server --mode development --open --hot",
+    "build": "npm run build:css &&  webpack --mode production",
+    "build:css": "postcss src/tailwind.css -o src/main.css",
+    "watch:css": "postcss src/tailwind.css -o src/main.css"
   },
   "author": "deepesh",
   "license": "MIT",
@@ -20,10 +23,18 @@
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.9.4",
     "@babel/preset-typescript": "^7.9.0",
+    "@svgr/webpack": "^5.4.0",
+    "autoprefixer": "^9.8.6",
     "babel-loader": "^8.1.0",
     "css-loader": "^3.4.2",
     "html-webpack-plugin": "^4.3.0",
+    "postcss-cli": "^7.1.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "style-loader": "^1.2.1",
+    "tailwindcss": "^1.6.2",
     "typescript": "^3.9.7",
+    "url-loader": "^4.1.0",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
