@@ -1,7 +1,7 @@
 {
-  "name": "react-typescript-simple-starter",
+  "name": "react-typescript-tailwind",
   "version": "1.0.0",
-  "description": "a simple react typescript boilerplate",
+  "description": "a react typescript tailwind css boilerplate",
   "main": "index.js",
   "scripts": {
     "start": "npm run watch:css && webpack-dev-server --mode development --open --hot",
@@ -13,12 +13,7 @@
     "react",
     "typescript"
   ],
-  "browserslist": [
-    "last 1 version",
-    "> 1%",
-    "IE 11"
-  ],
-  "author": "jishnu koottala",
+  "author": "Deepesh Kumar",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.9.0",

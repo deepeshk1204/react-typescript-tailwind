@@ -17,4 +17,3 @@ tools used
 - webfontloader - 1.6
 - Tailwind css
 
-Created by Jishnu Koottala
