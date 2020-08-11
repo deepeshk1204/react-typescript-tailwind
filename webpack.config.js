@@ -41,6 +41,7 @@ module.exports = {
           },
         ],
       },
+
       // css-loader to bundle all the css files into one file and style-loader to add all the styles  inside the style tag of the document
       {
         test: /\.css$/,
@@ -69,10 +70,24 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/index.html",
     }),
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        postcss: [autoprefixer({ grid: true, browsers: [">1%"] })],
+      },
+    }),
   ],
 
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
-    alias: {},
+    alias: {
+      Shell: path.resolve(__dirname, "src/components/shell/"),
+      Container: path.resolve(
+        __dirname,
+        "src/components/containers/",
+      ),
+      Routes: path.resolve(__dirname, "src/components/routes/"),
+      Views: path.resolve(__dirname, "src/components/views/"),
+      Assets: path.resolve(__dirname, "src/assets/"),
+    },
   },
 }
