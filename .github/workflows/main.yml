@@ -8,6 +8,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Install Dependencies
+        run: npm install
+        
+      - name: Start build
+        run: npm run build
+        
       # ( Build to ./dist or other directory... )
 
       - name: Deploy to Netlify
@@ -22,5 +28,5 @@ jobs:
           overwrites-pull-request-comment: true
         env:
           NETLIFY_AUTH_TOKEN: 'dc1cce248da138853fe05b7a7f3f728b96f5fc40e4ea3511caa18b65fe424186'
-          NETLIFY_SITE_ID: 'infallible-allen-7014eb'
+          NETLIFY_SITE_ID: '7b817f3b-6064-46be-a480-37cd3033a3a9'
         timeout-minutes: 2
