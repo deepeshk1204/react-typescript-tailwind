@@ -8,12 +8,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Install Dependencies
-        run: npm install
-        
-      - name: Start build
-        run: npm run build
-        
       # ( Build to ./dist or other directory... )
 
       - name: Deploy to Netlify
@@ -21,12 +15,12 @@ jobs:
         with:
           publish-dir: './dist'
           production-branch: feature/reduce-build-size
-          github-token: 'fad835c7cfc71cfc4d1b5d07eda0d9aa82a18bf2'
+          github-token: ${{ secrets.GITHUBTOKEN }}
           deploy-message: "Deploy from GitHub Actions"
           enable-pull-request-comment: false
           enable-commit-comment: true
           overwrites-pull-request-comment: true
         env:
-          NETLIFY_AUTH_TOKEN: 'dc1cce248da138853fe05b7a7f3f728b96f5fc40e4ea3511caa18b65fe424186'
-          NETLIFY_SITE_ID: '7b817f3b-6064-46be-a480-37cd3033a3a9'
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         timeout-minutes: 2
