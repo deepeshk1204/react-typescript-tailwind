@@ -19,7 +19,13 @@ const Dashboard: React.FC = () => (
           <li>autoprefixer - 9.7</li> 
           <li>webfontloader - 1.6</li> 
           <li>Tailwind css</li> 
+          <br/>
+          <p>
+          deployed via netlify
+          </p>
       </p>
+    </div>
+    <div>
     </div>
   </div>
 )
